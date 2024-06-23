@@ -12,6 +12,7 @@ import icons from "@/constants/icons";
 interface ListTileProps {
   title: string;
   handlePress(): any;
+  handleCheckPress(): any;
   containerStyles?: string;
   textStyles?: string;
   isLoading?: boolean;
@@ -22,6 +23,7 @@ const ListTile = ({
   title,
   isCompleted,
   handlePress,
+  handleCheckPress,
   containerStyles,
   textStyles,
   isLoading,
@@ -29,11 +31,11 @@ const ListTile = ({
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className="w-full p-4 flex-row justify-between bg-white shadow-md rounded-md"
+      className={`w-full p-4 flex-row justify-between bg-white shadow-md rounded-md ${containerStyles}`}
     >
-      <Text className="text-md">ListTile</Text>
+      <Text className={`text-md ${textStyles}`}>{title}</Text>
 
-      <TouchableHighlight>
+      <TouchableHighlight onPress={handleCheckPress}>
         <Image
           source={isCompleted ? icons.checkFilled : icons.check}
           resizeMode="contain"

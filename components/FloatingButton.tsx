@@ -16,7 +16,7 @@ const FloatingButton = ({
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className={`${containerStyles} bg-secondary rounded-full p-4 items-center justify-center`}
+      className={`${containerStyles} bg-secondary rounded-full w-16 h-16 items-center justify-center`}
     >
       <Image
         source={icons.addWhite}

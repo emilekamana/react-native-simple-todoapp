@@ -17,8 +17,11 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="new-task" />
+      <Stack.Screen
+        name="index"
+        options={{ headerShown: false, title: "Home" }}
+      />
+      <Stack.Screen name="new-task" options={{ title: "Add new task" }} />
     </Stack>
   );
 }
